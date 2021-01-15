@@ -34,6 +34,25 @@ void bubble(std::array<int, size> & array, int depth = -1)
 }
 
 template<int size>
+void insertionSort(std::array<int, size> & array)
+{
+    int value, j;
+    for (int i=1; i<size; i++)
+    {
+        value = array[i];
+        j = i - 1;
+
+        while ((j > -1) && (k < array[j]))
+        {
+            array[j + 1] = array[j];
+            j--;
+        }
+
+        array[j + 1]= k;
+    }
+}
+
+template<int size>
 void approx(std::array<int, size> & array)
 {
     int min = *std::min_element(array.begin(), array.begin() + size);
@@ -73,3 +92,11 @@ void riskyBubble(std::array<int, size> & array)
     }
 
 }
+
+template<int size>
+void quickInsert(std::array<int, size> & array)
+{
+    approx<size>(array);
+    insertionSort<size>(array);
+}
+
