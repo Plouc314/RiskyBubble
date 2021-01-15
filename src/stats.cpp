@@ -60,6 +60,18 @@ float getRiskyBubbleDuration(std::array<int, size> & array)
 }
 
 template<int size>
+float getQuickInsertDuration(std::array<int, size> & array)
+{
+    auto t1 = std::chrono::high_resolution_clock::now();
+    quickInsert<size>(array);
+    auto t2 = std::chrono::high_resolution_clock::now();
+
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
+
+    return (float) duration;
+}
+
+template<int size>
 float getBuiltInDuration(std::array<int, size> & array)
 {
     auto t1 = std::chrono::high_resolution_clock::now();

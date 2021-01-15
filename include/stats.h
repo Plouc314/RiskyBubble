@@ -14,4 +14,7 @@ template<int size>
 float getRiskyBubbleDuration(std::array<int, size> & array);
 
 template<int size>
+float getQuickInsertDuration(std::array<int, size> & array);
+
+template<int size>
 float getBuiltInDuration(std::array<int, size> & array);

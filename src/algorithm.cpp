@@ -42,13 +42,13 @@ void insertionSort(std::array<int, size> & array)
         value = array[i];
         j = i - 1;
 
-        while ((j > -1) && (k < array[j]))
+        while ((j > -1) && (value < array[j]))
         {
             array[j + 1] = array[j];
             j--;
         }
 
-        array[j + 1]= k;
+        array[j + 1]= value;
     }
 }
 
@@ -83,7 +83,7 @@ void approx(std::array<int, size> & array)
 template<int size>
 void riskyBubble(std::array<int, size> & array)
 {
-    int depth = 2 * std::log10(size);
+    int depth = 2 * log10(size);
 
     for (int step=0; step<depth; step++)
     {

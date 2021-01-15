@@ -20,13 +20,13 @@ int main(){
 
     srand(time(NULL));
 
-    const int size = 50000;
+    const int size = 100000;
 
     std::array<int, size> array;
 
     fillRandom<size>(array, 0, size);
 
-    float t = getRiskyBubbleDuration<size>(array);
+    float t = getBuiltInDuration<size>(array);
 
     float acc = getAccuracy<size>(array);
 
